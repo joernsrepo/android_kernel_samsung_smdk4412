@@ -161,15 +161,14 @@ static struct timer_list bln_notification_timeout_timer;
 static void bln_notification_off_process(struct work_struct *bln_notification_off_work);
 static DECLARE_WORK(bln_notification_off_work, bln_notification_off_process);
 
-bool bln_enabled = false;
-bool bln_ongoing = false;
-bool bln_blink_enabled = false;
-bool bln_suspended = false;
-static void enable_led_notification(void);
-static void disable_led_notification(void);
+static bool bln_enabled = false;
+static bool bln_ongoing = false;
+static bool bln_blink_enabled = false;
+static bool bln_suspended = false;
 
 static DEFINE_MUTEX(led_notification_mutex);
-
+static void enable_led_notification(void);
+static void disable_led_notification(void);
 #endif
 
 #ifdef LED_LDO_WITH_REGULATOR
